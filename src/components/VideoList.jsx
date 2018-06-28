@@ -1,10 +1,24 @@
-var VideoList = () => (
+// var VideoList = (props) => (
+//   <div className="video-list">
+//     <div>
+//       <h5><em>
+//         <VideoListEntry {props.data.map(
+//           video => <VideoListEntry 
+//             key={video} 
+//             video={video}
+//           />
+//          )}
+//         /> 
+//       </em></h5>
+//     </div>
+//   </div>
+// );
+
+var VideoList = (props) => (
   <div className="video-list">
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
+    {props.videos.map( video =>
+      <VideoListEntry video={video} key={video.id.videoId}/>
+    )}
   </div>
 );
 
